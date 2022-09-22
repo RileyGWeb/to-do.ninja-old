@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/items', [ItemController::class, 'index']);
+    Route::prefix('/item')->group( function () {
+        Route::post('/store', [ItemController::class, 'store']);
+        Route::put('/{id}', [ItemController::class, 'update']);
+        Route::delete('/{id}', [ItemController::class, 'destroy']);
+    });
 });
+
