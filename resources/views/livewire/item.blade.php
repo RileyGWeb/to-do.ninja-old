@@ -1,3 +1,4 @@
-<div>
-    {{-- Care about people's approval and you will be their prisoner. --}}
+<div class="flex">
+    <input type="checkbox" name="completed">
+    <input type="text" name="name" placeholder="Enter a task...">
 </div>
