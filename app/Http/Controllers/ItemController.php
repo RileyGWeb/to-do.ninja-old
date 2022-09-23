@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Item;
@@ -19,14 +18,6 @@ class ItemController extends Controller
         return Item::orderBy('created_at', 'DESC')->get();
     }
 
-    public function store(Request $request)
-    {
-        
-        $newItem = new Item;
-        $newItem->name = $request->name;
-        $newItem->save();
-        return $newItem;
-    }
 
     public function update(Request $request, $id)
     {

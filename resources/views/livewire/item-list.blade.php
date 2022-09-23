@@ -1,3 +1,8 @@
 <div>
-    {{-- Knowing others is intelligence; knowing yourself is true wisdom. --}}
+    @foreach($items as $item)    
+        <div class="flex">
+            <input type="checkbox" name="completed">
+            <p>{{ $item->name }}</p>
+        </div>
+    @endforeach
 </div>
