@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
 
 /*
@@ -23,13 +24,12 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/', function () {
-        return view('home');
-    })->name('home');
+
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
     Route::get('/items', [ItemController::class, 'index']);
     Route::prefix('/item')->group( function () {
-        Route::post('/store', [ItemController::class, 'store']);
+        Route::post('/store', [ItemController::class, 'store'])->name('create');
         Route::put('/{id}', [ItemController::class, 'update']);
         Route::delete('/{id}', [ItemController::class, 'destroy']);
     });

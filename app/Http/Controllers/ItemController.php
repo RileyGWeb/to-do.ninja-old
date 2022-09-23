@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Item;
-use Illuminate\Support\Carbon;
 
 class ItemController extends Controller
 {
@@ -20,10 +21,10 @@ class ItemController extends Controller
 
     public function store(Request $request)
     {
+        
         $newItem = new Item;
-        $newItem->name = $request->item["name"];
+        $newItem->name = $request->name;
         $newItem->save();
-
         return $newItem;
     }
 

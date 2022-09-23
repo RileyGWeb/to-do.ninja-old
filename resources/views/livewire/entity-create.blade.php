@@ -1,6 +1,9 @@
 <div>
-    <form action="put">
+    <form method="POST" action="{{ route('create') }}">
+        @csrf
+        
         <h3>Create item</h3>
-        <input type="text" placeholder="Item Name"/>
+        <input type="text" name="name" placeholder="Item Name"/>
+        <input type="submit" text="Submit" class="border border-slate-600 px-4 py-2 rounded cursor-pointer">
     </form>
 </div>

@@ -1,3 +1,4 @@
 <x-app-layout>
-    test
+    <h3>Add a task here</h3>
+    <livewire:entity-create/>
 </x-app-layout>
