@@ -16,6 +16,7 @@ class ItemList extends Component
     public $item;
     public $items = [];
     public $completed = false;
+    public $completed_at = null;
     /**
      * Renders the component
      */
@@ -36,28 +37,34 @@ class ItemList extends Component
 
     }
 
-    public function completed($id, $completed)
+    public function completed($id)
     {
-        dd("sfd");
-        if( $completed ) {
-            $existingItem = Item::where( 'id',$id );
-        }
+        $item = Item::find( $id );
 
-        if( $existingItem ) {
-            // $existingItem->completed = $completed ? true : false;
-            // $existingItem->completed_at = $completed ? Carbon::now() : null;
-            $completed_at = null;
-            if ( $completed ) {
-                $completed_at = Carbon::now();
-            }
-            $existingItem->update([
-                'completed' => $completed,
-                'completed_at' => $completed_at,
+        if (is_null($item)) {
+            return; // item not found
+        }
+        // if (is_null($item->completed_at)) {
+        //     $item->update([
+        //         'completed' => true,
+        //         'completed_at' => now(),
+        //     ]);
+        // } else {
+        //     $item->update([
+        //         'completed' => false,
+        //         'completed_at' => null,
+        //     ]);
+        // }
+        // dd( $this->completed );
+        if( !$item->completed ) {
+            $item->update([
+                'completed' => true
             ]);
-            return $existingItem;
+        } else {
+            $item->update([
+                'completed' => false
+            ]);
         }
-
-        return "Item not found";
     }
 
     /**

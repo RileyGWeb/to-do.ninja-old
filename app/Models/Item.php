@@ -10,13 +10,13 @@ class Item extends Model
 {
     use HasFactory;
 
-    // protected $fillable = ['name'];
+    protected $fillable = ['completed'];
     /**
      * Finds a given item in the database.
      */
-    public static function find($id)
-    {
-        return DB::table('items')
-        ->where('id', '=', $id);
-    }
+    // public static function find($id)
+    // {
+    //     return DB::table('items')
+    //     ->where('id', '=', $id);
+    // }
 }

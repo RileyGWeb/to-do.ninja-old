@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->boolean('completed')->default(false);
-            $table->timestamp('completed_at')->nullable();
+            $table->datetime('completed_at')->nullable();
             $table->integer('user_id');
             $table->integer('list_id')->default('0');
             $table->integer('project_id')->default('0');
