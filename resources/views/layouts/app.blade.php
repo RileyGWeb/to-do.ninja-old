@@ -13,6 +13,7 @@
         <!-- Scripts -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <script src="{{ mix('js/app.js') }}"></script>
+        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
         <!-- Styles -->
         @livewireStyles
     </head>
