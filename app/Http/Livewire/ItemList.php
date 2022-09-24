@@ -38,6 +38,7 @@ class ItemList extends Component
 
     public function completed($id, $completed)
     {
+        dd("sfd");
         if( $completed ) {
             $existingItem = Item::where( 'id',$id );
         }
