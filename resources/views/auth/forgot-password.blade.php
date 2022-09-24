@@ -1,7 +1,10 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <div class="flex">
+                <x-jet-authentication-card-logo />
+                <div style="font-family: 'Julius Sans One', sans-serif;" class="self-center pl-4 text-3xl text-gray-500">To-do.Ninja</div>
+            </div>
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">

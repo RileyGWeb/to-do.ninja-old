@@ -1,5 +1,6 @@
 <x-app-layout>
-    <h3>Add a task here</h3>
-    <livewire:entity-create/>
-    <livewire:item-list/>
+    <div class="max-w-xl mx-auto mt-12 p-4">
+        <livewire:entity-create/>
+        <livewire:item-list/>
+    </div>
 </x-app-layout>
