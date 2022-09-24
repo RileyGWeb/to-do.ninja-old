@@ -1631,6 +1631,9 @@ input[type="range"]::-ms-fill-lower {
 .ml-auto {
   margin-left: auto;
 }
+.mr-auto {
+  margin-right: auto;
+}
 .block {
   display: block;
 }
